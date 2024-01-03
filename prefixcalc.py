@@ -1,6 +1,6 @@
 #!/usr/bin/ env pthon3
 
-"""Calculadora infix.
+"""Calculadora prefix.
 
 Funciomaneto:
 
@@ -13,13 +13,13 @@ mul -> *
 div -> /
 
 Uso:
-$ infixcalc.py sum 5 2 
+$ prefixcalc.py sum 5 2 
 7
 
-$ infixcalc.py mul 10 5 
+$ prefixcalc.py mul 10 5 
 50
 
-$infixcalc.py 
+$prefixcalc.py 
 opercao: sum
 n1: 5
 n2: 4 
