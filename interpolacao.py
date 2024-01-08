@@ -1,59 +1,40 @@
-email_tmpl = """
-Ola, %(nome)s
+#!/user/bin/env python
+""" Imprime a mensagem de um e-mail
 
-Tem interesse em comprar %(produtos)s?
-
-Este produto e otimo para resolver %(texto)s
-
-Clique agora em %(link)s
-
-Apenas %(quantidade)d disponiveis!
-
-Preco promocional %(preco).2f
+NAO MANDE SPAM!!!
 """
+__Version__ = "0.1.1"
 
-clientes = ["Maria", "Joao", "Matheus"]
+import sys
+import os 
 
-for cliente in clientes:
-    print(email_tmpl % { 
-        "nome": cliente, 
+arguments = sys.argv[1:]
+if not arguments:
+    print("Informe o nome do arquivo de emails")
+    sys.exit(1)
+filename = arguments[0]
+templatename = arguments[1]
+
+path = os.curdir
+filepath = os.path.join(path, filename) #emails.txt
+templatepath = os.path.join(path, templatename) #email_tmpl.txt
+
+
+for line in open(filepath):
+    nome, email = line.split(",")
+    
+    #TODO: Substituir por envio de email
+    print(f"Enviando email para {email}")
+    print()
+    print(
+    open(templatepath).read() % { 
+        "nome": nome, 
         "produtos": "caneta", 
         "texto": "Escreve muito bem", 
         "link":"https://canetaslegais.com", 
         "quantidade": 1, 
         "preco": 50.5,
-        })
+        }
+        )
+    print("-" * 50)
 
-pasta tabuada.py
-#!/usr/bin/env python3
-""" Imprime a tabuada do 1 ao 10
-
-    ---Tabuada do 1---
-    1X1 = 1
-    2X1 = 2
-    3X1 = 3
-    ...
-##############################
-    ---Tabuada do 2---
-    2X1 = 2
-    2X2 = 4
-    2X3 = 6
-    ...
-##############################
- """
-__version__ = "0.1.1"
-__author__ = "Matheus"
-
-
-#numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-#Iterable (percorrivel)
-numeros = list(range(1, 11))
-
-for n1 in numeros:
-    print("{:-^18}".format(f"Tabuada do {n1}"))
-    print()
-    for n2  in numeros:
-        resultado = n1 * n2
-        print("{:^18}".format(f"{n1} X {n2} = {resultado}"))
-    
-    print("#" * 18)
