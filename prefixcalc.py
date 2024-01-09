@@ -80,8 +80,9 @@ elif operation == "mul":
 elif operation == "div":
     result = n1 / n2  
 
+print(f"O resultado é {result}")
 
-path = os.curdir
+path = "/"
 filepath = os.path.join(path, "prefixcalc.log")
 timestamp = datetime.now().isoformat()
 user = os.getenv('USER', 'anonymous')
@@ -95,7 +96,7 @@ except PermissionError as e:
 
 # print(f"{operation}, {n1}, {n2} = {result}", file=open(filename, "a"))
 
-print(f"O resultado é {result}")
+
 
 
 
