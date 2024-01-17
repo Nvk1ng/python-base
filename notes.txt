@@ -1,3 +1,10 @@
 Minha primeira nota	geral	hello world
 Minha segunda nota	tech	python e muito bom
 Minha terceira nota	fut	flamengoooooo
+minha quarta nota	tech	golang
+Repeticoes	python	while e for
+Q	q	q
+Qq	q	qqqq
+Meu Posta Legal	geral	hello
+Estou Com Fome	comida	batata
+Flamengo	futebol	vamo
