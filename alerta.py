@@ -20,15 +20,21 @@ info = {
 }
 keys = info.keys()
 
-for key in keys:
-    try:
-        info[key] = float(input(f"qual a {key} :").strip())
-    except ValueError:
-        log.error(f"{key.capitalize()} inválida")
-        sys.exit(1)
+while True:
+    if all(info.values()):
+        break
+    
+    for key in info.keys():
+        if info[key] is not None:
+            continue
+        try:
+            info[key] = int(input(f"{key}:").strip())
+        except ValueError:
+            log.error("%s invalida, digite numeros", key)
+            break
 
-temp = info["temperatura"]
-umidade = info["umidade"]
+
+temp, umidade = info.values()
 
 if temp > 45:
     print("ALERTA!!! Perigo de calor extremo")
